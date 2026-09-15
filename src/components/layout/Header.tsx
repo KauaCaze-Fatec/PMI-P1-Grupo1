@@ -1,11 +1,22 @@
 import { useTheme } from "../../context/ThemeContext";
+import { TimerDisplay } from "./TimerDisplay";
+import { TimerControls } from "./TimerControls";
 
 interface HeaderProps {
   questaoAtual?: number;
   totalQuestoes?: number;
+  segundosRestantes?: number;
+  onAjustarTempo?: (minutos: number) => void;
+  onResetarTempoPadrao?: () => void;
 }
 
-export function Header({ questaoAtual, totalQuestoes }: HeaderProps) {
+export function Header({
+  questaoAtual,
+  totalQuestoes,
+  segundosRestantes,
+  onAjustarTempo,
+  onResetarTempoPadrao,
+}: HeaderProps) {
   const { tema, alternarTema } = useTheme();
   const modoEscuroAtivo = tema === "dark";
 
@@ -14,6 +25,12 @@ export function Header({ questaoAtual, totalQuestoes }: HeaderProps) {
       <span className="text-sm font-semibold">Simulado ENADE</span>
 
       <div className="flex flex-wrap items-center gap-4">
+        {typeof segundosRestantes === "number" && <TimerDisplay segundosRestantes={segundosRestantes} />}
+
+        {onAjustarTempo && onResetarTempoPadrao && (
+          <TimerControls onAjustar={onAjustarTempo} onResetarPadrao={onResetarTempoPadrao} />
+        )}
+
         <button
           type="button"
           aria-pressed={modoEscuroAtivo}
