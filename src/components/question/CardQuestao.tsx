@@ -13,7 +13,8 @@ export function CardQuestao({ questao, resposta, onSelecionarAlternativa }: Card
   const corrigida = resposta?.corrigida ?? false;
 
   return (
-    <article className="mx-auto flex max-w-3xl flex-col gap-4 rounded-xl border border-neutral-200 bg-white p-6 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
+    <article className="mx-auto flex max-w-3xl flex-col gap-4 rounded-xl border border-neutral-200 p-6 shadow-sm dark:border-neutral-800"
+  style={{ backgroundColor: "var(--color-surface)" }}>
       <header className="flex items-center justify-between">
         <h2 className="text-lg font-semibold">Exame de Ciência da Computação — Bacharelado</h2>
         <span className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">

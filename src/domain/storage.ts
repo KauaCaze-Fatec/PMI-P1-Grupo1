@@ -62,7 +62,7 @@ export function limparProgressoSimulado(): void {
 
 export function carregarPreferencias(): PreferenciasUsuario {
   return {
-    tema: lerJSON<PreferenciasUsuario["tema"]>(STORAGE_KEYS.tema, "light"),
+    tema: lerJSON<PreferenciasUsuario["tema"]>(STORAGE_KEYS.tema, "dark"),
   };
 }
 

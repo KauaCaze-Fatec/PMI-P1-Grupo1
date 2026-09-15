@@ -6,10 +6,15 @@ import Creditos from "./pages/Creditos";
 import Simulado from "./pages/Simulado";
 import Resultado from "./pages/Resultado";
 import Gabarito from "./pages/Gabarito";
+import { SiteNav } from "./components/layout/SiteNav";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <div
+      className="min-h-screen text-neutral-900 dark:text-neutral-100"
+      style={{ backgroundColor: "var(--color-bg)" }}
+    >
+      <SiteNav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tutorial" element={<Tutorial />} />

@@ -8,8 +8,14 @@
 
 :root {
   color-scheme: light;
+  --color-bg: #f8f9fa;
+  --color-surface: #ffffff;
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
+  --color-bg: #121212;
+  /* Levemente mais clara que o fundo, pra dar sensação de elevação
+     nos cards/modais sem cair no preto puro (#000000). */
+  --color-surface: #1e1e1e;
 }

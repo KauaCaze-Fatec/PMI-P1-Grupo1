@@ -32,8 +32,9 @@ export function Modal({ aberto, titulo, onFechar, children }: ModalProps) {
       ref={dialogRef}
       aria-labelledby="modal-titulo"
       onClose={onFechar}
-      onCancel={onFechar} // disparado pelo navegador quando o usuário aperta Esc
-      className="w-full max-w-md rounded-xl border border-neutral-200 bg-white p-0 text-neutral-900 shadow-xl backdrop:bg-black/40 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100"
+      onCancel={onFechar}
+      className="w-full max-w-md rounded-xl border border-neutral-200 p-0 text-neutral-900 shadow-xl backdrop:bg-black/40 dark:border-neutral-800 dark:text-neutral-100"
+      style={{ backgroundColor: "var(--color-surface)" }}
     >
       <div className="flex items-center justify-between border-b border-neutral-200 px-5 py-3 dark:border-neutral-800">
         <h2 id="modal-titulo" className="text-base font-semibold">
